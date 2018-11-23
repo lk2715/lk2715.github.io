@@ -12,7 +12,7 @@ const examples = {
   'example2':
       'His name is Romeo, and a Mountague, The onely Sonne of your great Enemie',
   'example3':
-      'To be, or not to be: that is the question.'      
+      'There are more things in Heaven and Earth, Horatio, than are dreamt of in your philosophy.'      
 };
 
 function status(statusText) {
