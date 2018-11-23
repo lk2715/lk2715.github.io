@@ -8,11 +8,11 @@ const HOSTED_URLS = {
 
 const examples = {
   'example1':
-      'Alice was beginning to get very tired of sitting by her sister on the bank.',
+      'Give sorrow words: the grief that does not speak Whispers the o er-fraught heart, and bids it break.',
   'example2':
-      'Buda-Pesth seems a wonderful place.',
+      'His name is Romeo, and a Mountague, The onely Sonne of your great Enemie',
   'example3':
-      'Scepticism was as much the result of knowledge, as knowledge is of scepticism.'      
+      'To be, or not to be: that is the question.'      
 };
 
 function status(statusText) {
