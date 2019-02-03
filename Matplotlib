@@ -1,0 +1,113 @@
+Matplotlib
+
+#import
+import matplotlib as mpl
+import matplotlib.pyplot as plt # import matplotlib
+
+plt.style.use('classic or styles'): directly choose the styles for the figures
+
+%matplotlib notebook: interactive plots embedded within the notebook
+%matplotlib inline: static images of your plot embedded in the notebook
+
+fig.savefig('.png')  # save figures
+from Ipython.display import Image
+Image('.png') #display the contents of the file
+
+plt.plot(x, y, styples of line, color, label (if want legend))
+	- '-': solid, '--':dashed,'-.': dashdot, ':': dotted
+
+#creating subplots (MATLAB styples)
+plt.subplot(row, col, panel number)
+plt.plot()
+
+plt.gcf() (get current figure)
+plt.gca() (get current axes)
+
+#object-oriented: when you want more control over your figure
+fig, ax = plt.subplots(n) #n axes object
+ax[0].plot()
+ax[1].plot()
+
+ax.set_xlabel()
+ax.set_ylabel()
+ax.set_xlim()
+ax.set_ylim()
+ax.set_title()
+or
+ax.set(xlim= , ylim = , xlabel = , ylabel = , title = )
+
+
+##legends
+ax.legend(loc(location) = , frameon = , ncol=,
+		title = , labelspacing = )
+
+- add multiple legends
+from matplotlib.legend import Legend
+leg = Legend(ax, lines, [, ](label), loc, frameon)
+ax.add_artist(leg)
+
+#figure: a single container that contains all the objects representing axes, graphics, test, and labels
+#axes: a bounding box with ticks and labels, which will eventually contain the plot elements that make up our visualization
+
+#to create a single figure with multiple lines, call the plot function multiple times
+
+
+#setting limits
+plt.xlim(start, end)
+plt.ylim(start, end)
+plt.axis([xmin, xmax, ymin, ymax])
+	- plt.axis('tight'): tighten the bounds around the current plot
+	- plt.axis('equal'): one unit in x is equal to one unit in y
+
+plt.title(), plt.xlabel(), plt.ylabel(): gives title, xlabel, and ylabel respectively
+
+plt.legend(): gives legend
+
+
+
+
+#markets: different symbolt
+['o', '.', ',', 'x', '+', 'v', '^', '<', '>', 's', 'd']
+plt.plot(x, y, '-p', color = 'gray',
+		markersize = 15, linewidth = , markerfacecolor = "inside of marker",
+		marketedgecolor = "edge of marker", markeredgewidth = )
+
+
+	fig, ax = plt.subplots(5,2, figsize = ())
+# to graph multiple plots:
+	for i, ax in enumerate(axes.ravel()):
+		ax.plot()
+		**axes.ravel() contains the list of each ax
+
+
+
+# scatterplots
+plt.scatter(): properties of each individual point can be controlled or mapped to data
+plt.scatter(x, y, c =colors, s= sizes, alpha = , cmap ='viridis')
+plt.colorbar(); #show color scale
+
+
+#errorbar
+plt.errorbar(x, y, yerr = dy, fmt = "formatcode like .k or o",
+			#extra: color = , ecolor = "errorbarcolor", elinewidth = )
+
+- continuous error
+plt.fill_between(x, y - dy (lower y-bound), y + dy (upper y bound), color = , alpha = )
+
+
+#####density and contour plots
+plt.contour # contour plots
+plt.contourf # filled contour plots
+plt.imshow(data, cmap = ) # shoa images
+
+#contour plot (three-dimensional data in two dimensions)
+plt.contour(x, y, z, cmap= 'RdGY')
+plt.contourf(x, y, z, 20, cmap = 'RdGY')
+
+
+######Hisgorams, Binnings, and Density
+plt.hist(data, bins = n, normed = , alpha = , histtype = ,
+			color = , edgecolor = )
+-2d hist
+plt.2dhist(x, y, bins = , cmap=)
+plt.hexbin(x, y, gridsize = , cmap)
